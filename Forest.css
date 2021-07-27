@@ -1,0 +1,46 @@
+/* 
+Based on theme by hlx - https://github.com/hlx/fman
+*/
+
+QTableView, QMessageBox, QDialog, QListView {
+    background-color: #1f1f1f; /*  backgound color */
+    alternate-background-color: #1f1f1f;
+}
+
+QTableView-item {
+    color: #395f3c;
+}
+
+QTableView-item:first {
+    color: #d4d7d6; /* label color */
+}
+
+QTableView-item:selected {
+    color: #bde091;
+    background-color: #2e2e2e; /* selected back color */
+}
+
+QTableView-item:focus {
+    background-color: #363636;
+}
+
+.quicksearch {
+    background-color: #2f4f32;
+}
+
+QStatusBar {
+    background-color: #2f4f32;
+    border-top: 1px solid #4e684e;
+}
+
+.quicksearch-item {
+    padding-top: 0px;
+}
+
+.quicksearch-item-title {
+    color: #bde091;
+}
+
+.quicksearch-item-hint {
+    color: #bde091;
+}

@@ -1,0 +1,182 @@
+/* 
+Based on theme by ekillops
+https://github.com/fman-users/fman/issues/45#issuecomment-833181122
+*/
+
+QTableView, QMessageBox, QDialog, QListView {
+    background-color: #2E3440;
+    alternate-background-color: #2E3440;
+}
+
+QHeaderView, QHeaderView-section {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2E3440, stop: 1 #2E3440);
+}
+
+QHeaderView-section {
+    color: #EBCB8B;
+    border-left-color: #434C5E;
+    border-right-color: #434C5E;
+}
+
+QTableView-item {
+    color: #8FBCBB;
+}
+
+QTableView-item:first {
+    color: #D8DEE9;
+}
+
+QTableView-item:selected {
+    color: #BF616A;
+    background-color: #2E3440;
+}
+
+QTableView-item:focus {
+    background-color: #4C566A;
+}
+
+QLabel, QRadioButton, QCheckBox {
+    color: #D8DEE9;
+}
+
+QLineEdit {
+    color: #D8DEE9;
+    background-color: #434C5E;
+    border: 3px solid #434C5E;
+    border-left-color: #434C5E;
+    border-top-color: #434C5E;
+}
+
+.quicksearch {
+    background-color: #2E3440;
+    color: #D8DEE9;
+}
+
+.quicksearch-query {
+    border: 1px solid #2E3440;
+    border-bottom-color: #2E3440;
+}
+
+.quicksearch-query-div {
+    border: 1px solid #2E3440;
+}
+
+.quicksearch-edit {
+    color: #D8DEE9;
+    background-color: #434C5E;
+    border: 1px solid #434C5E;
+    border-top-color: #434C5E;
+    border-left-color: #434C5E;
+    border-right-color: #434C5E;
+}
+
+.quicksearch-view {
+    background-color: #2E3440;
+}
+
+.quicksearch-view:selected {
+    background-color: #434C5E;
+}
+
+QLineEdit:read-only {
+    color: #88C0D0;
+}
+
+QStatusBar {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #434C5E, stop: 1 #434C5E);
+    border-top: 1px solid #434C5E;
+}
+
+QStatusBar, QStatusBar QLabel {
+    color: #88C0D0;
+}
+
+.splashscreen-button {
+    color: #2E3440;
+    background-color: #EBCB8B;
+    border: 1px solid #EBCB8B;
+}
+
+.overlay {
+    background-color: #2E3440;
+    border: 1px solid #434C5E;
+}
+
+.filterbar {
+    background-color: #2E3440;
+    border: 1px solid #434C5E;
+}
+
+.nonexistentshortcutdialog-button {
+    max-width: 4em;
+    color: #2E3440;
+    background-color: #EBCB8B;
+    border: 1px solid #EBCB8B;
+}
+
+.nonexistentshortcutdialog-edit {
+    border: 3px solid #434C5E;
+}
+
+QRadioButton::checked {
+    color: #8FBCBB;
+}
+
+/* scrollbar preferences */
+QScrollBar {
+    color: #D8DEE9;
+    background-color: #434C5E;  
+    border: none;
+    width: 10px;
+    margin: 22px 0 22px 0;
+}
+
+QScrollBar::handle {
+    background: #434C5E;
+}
+
+QScrollBar::add-line {
+    border: none;
+    background: #434C5E;
+    height: 20px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line {
+    border: none;
+    background: #434C5E;
+    height: 20px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+* {
+    background: #434C5E;
+}
+
+.locationbar {
+    border-bottom: 1px solid #2E3440;
+}
+
+.quicksearch-item {
+    padding-top: 3px;
+    border-top: 1px solid #434C5E;
+    border-bottom: 0px solid #434C5E;
+}
+
+.quicksearch-item-title {
+    color: #88C0D0;
+}
+
+.quicksearch-item-title-highlight {
+    color: #D8DEE9;
+}
+
+.quicksearch-item-hint {
+    color: #D8DEE9;
+}
+
+.quicksearch-item-description {
+    color: #434C5E;
+}
