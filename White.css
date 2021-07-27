@@ -1,0 +1,162 @@
+/* 
+Based on theme by jrkd
+https://github.com/fman-users/fman/issues/45#issuecomment-678849432
+*/
+
+QTableView, QMessageBox, QDialog, QListView {
+    background-color: white;
+    alternate-background-color: white;
+}
+
+QHeaderView, QHeaderView-section {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f6f8fa, stop: 1 #f6f8fa);
+}
+
+QHeaderView-section {
+    color: black;
+    border-left-color: #f6f8fa;
+    border-right-color: #f6f8fa;
+}
+
+QTableView-item {
+    color: black;
+}
+
+QTableView-item:first {
+    color: black;
+}
+
+QTableView-item:selected {
+    color: black;
+    background-color: #f6f8fa;
+}
+
+QTableView-item:focus {
+    background-color: #f6f8fa;
+}
+
+QLabel, QRadioButton, QCheckBox {
+    color: black;
+}
+
+QLineEdit {
+    color: black;
+    background-color: white;
+    border: 1px solid #f6f8fa;
+    border-left-color: #f6f8fa;
+    border-top-color: #f6f8fa;
+}
+
+.quicksearch {
+    background-color: white;
+    color: black;
+}
+
+.quicksearch-query {
+    border: 1px solid #f6f8fa;
+    border-bottom-color: #f6f8fa;
+}
+
+.quicksearch-query-div {
+    border: 1px solid #f6f8fa;
+}
+
+.quicksearch-edit {
+    color: black;
+    background-color: white;
+    border: 1px solid #f6f8fa;
+    border-top-color: #f6f8fa;
+    border-left-color: #f6f8fa;
+    border-right-color: #f6f8fa;
+}
+
+.quicksearch-view {
+    background-color: white;
+    color: black;
+}
+.quicksearch-view-item:selected {
+    background-color: #f6f8fa;
+    color: black;
+}
+
+QLineEdit:read-only {
+    color: black;
+}
+
+QStatusBar {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f6f8fa, stop: 1 #f6f8fa);
+    border-top: 1px solid #f6f8fa;
+}
+
+QStatusBar, QStatusBar QLabel {
+    color: black;
+}
+
+.splashscreen {
+    background-color: white;
+    color: black;
+}
+
+.splashscreen-button {
+    background-color: white;
+}
+
+.overlay {
+    background-color: white;
+    color: black;
+    border: 1px solid #f6f8fa;
+}
+
+.overlay-button {
+    color: black;
+    background-color: white;
+}
+
+.filterbar {
+    background-color: white;
+    border: 1px solid #f6f8fa;
+}
+
+QRadioButton-checked {
+    color: black;
+}
+
+* {
+    background: #f6f8fa;
+    color: black;
+}
+
+.locationbar {
+    border-bottom: 1px solid #f6f8fa;
+    background-color: white;
+    color: black;
+}
+
+.statusbar {
+    background: white;
+    color: black;
+}
+
+.quicksearch-item {
+    padding-top: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-top: 1px solid #f6f8fa;
+    border-bottom: 1px solid #f6f8fa;
+}
+
+.quicksearch-item-title {
+    color: #676767;
+}
+
+.quicksearch-item-title-highlight {
+    color: black;
+}
+
+.quicksearch-item-hint {
+    color: white;
+}
+
+.quicksearch-item-description {
+    color: grey;
+}

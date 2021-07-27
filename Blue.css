@@ -1,0 +1,114 @@
+/* 
+Based on theme by adrianvaneeden
+https://github.com/fman-users/fman/issues/45#issuecomment-619325056
+*/
+
+QTableView, QMessageBox, QDialog, QListView {
+    background-color: #000033;
+    alternate-background-color: #000033;
+}
+
+QHeaderView, QHeaderView-section {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0000e6, stop: 1 #000066);
+}
+
+QHeaderView-section {
+    color: #00ffff;
+    border-left-color: #000033;
+    border-right-color: #000033;
+}
+
+/* These are the text items in the table */
+QTableView-item {
+    color: #808080;   
+}
+
+QTableView-item:first {
+    color: #ffffff;
+}
+
+/* Selected files */
+QTableView-item:selected {
+    color: #f92672;
+    background-color: #000044;
+}
+
+/* Focused files  */
+QTableView-item:focus {
+    color: #000044;
+    background-color: #00ffff;
+}
+
+/* Files which have been selected and hilighted */
+QTableView-item:focus:selected {
+    color: #f92672;
+    background-color: #00ffff;
+}
+
+QLabel, QRadioButton, QCheckBox {
+    background-color: #000033;
+    color: #ffff00;
+}
+
+QLineEdit {
+    /*color: #00ff00;*/
+    color: #ffffff; 
+    background-color: #000066;
+    border: 1px solid #000066;
+    border-left-color: #000066;
+    border-top-color: #000066;
+}
+
+.quicksearch {
+    background-color: #000066;
+}
+
+.quicksearch-query {
+    border: 1px solid #000066;
+    border-bottom-color: #000066;
+}
+
+.quicksearch-query-div {
+    border: 1px solid #000066;
+}
+
+.quicksearch-edit {
+    color: #000066;
+    background-color: #006fff;
+    border: none;
+}
+
+.quicksearch-view {
+    background-color: #3333ff;
+}
+
+.quicksearch-view-item:selected {
+    background-color: #0000e6;
+}
+
+QLineEdit:read-only {
+    color: #ffd000;
+}
+
+QStatusBar {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #000066, stop: 1 #0000e6);
+    border-top: 1px solid #8080e6;
+}
+
+QStatusBar, QStatusBar QLabel {
+    color: white;
+}
+
+.overlay {
+    background-color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+.filterbar {
+    background-color: #000033;
+    border: 1px solid #000066;
+}
+
+QRadioButton-checked {
+    color: white;
+}

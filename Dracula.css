@@ -1,0 +1,172 @@
+/* 
+Based on theme by sf-pear - https://github.com/sf-pear/dracula-for-fman
+*/
+
+QTableView, QMessageBox, QDialog, QListView {
+    background-color: #282a36;
+    alternate-background-color: #282a36;
+}
+
+QHeaderView, QHeaderView-section {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #282a36, stop: 1 #282a36);
+}
+
+QHeaderView-section {
+    color: #bd93f9;
+    border-left-color: #44475a;
+    border-right-color: #44475a;
+}
+
+QTableView-item {
+    color: #50fa7b;
+}
+
+QTableView-item:first {
+    color: #f8f8f2;
+}
+
+QTableView-item:selected {
+    color: #bd93f9;
+    background-color: #282a36;
+}
+
+QTableView-item:focus {
+    background-color: #44475a;
+}
+
+QLabel, QRadioButton, QCheckBox {
+    color: #f8f8f2;
+}
+
+QLineEdit {
+    color: #f8f8f2;
+    background-color: #44475a;
+    border: 3px solid #44475a;
+    border-left-color: #44475a;
+    border-top-color: #44475a;
+}
+
+.quicksearch {
+    background-color: #282a36;
+    color: #f8f8f2;
+}
+
+.quicksearch-query {
+    border: 1px solid #282a36;
+    border-bottom-color: #282a36;
+}
+
+.quicksearch-query-div {
+    border: 1px solid #282a36;
+}
+
+.quicksearch-edit {
+    color: #f8f8f2;
+    background-color: #44475a;
+    border: 1px solid #6272a4;
+    border-top-color: #6272a4;
+    border-left-color: #6272a4;
+    border-right-color: #6272a4;
+}
+
+.quicksearch-view {
+    background-color: #282a36;
+}
+
+.quicksearch-view-item:selected {
+    background-color: #44475a;
+}
+
+QLineEdit:read-only {
+    color: #8be9fd;
+}
+
+QStatusBar {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #44475a, stop: 1 #44475a);
+    border-top: 1px solid #6272a4;
+}
+
+QStatusBar, QStatusBar QLabel {
+    color: #8be9fd;
+}
+
+.splashscreen-button {
+    color: #282a36;
+    background-color: #bd93f9;
+    border: 1px solid #bd93f9;
+}
+
+.overlay {
+    background-color: #282a36;
+    border: 1px solid #6272a4;
+}
+
+.filterbar {
+    background-color: #282a36;
+    border: 1px solid #6272a4;
+}
+
+.nonexistentshortcutdialog-button {
+    color: #282a36;
+    background-color: #bd93f9;
+    border: 1px solid #bd93f9;
+}
+
+.nonexistentshortcutdialog-edit {
+    border: 3px solid #44475a;
+}
+
+QRadioButton::checked {
+    color: #50fa7b;
+}
+
+/* scrollbar preferences */
+
+QScrollBar {
+    color: #f8f8f2;
+    background-color: #44475a;  
+}
+
+QScrollBar {
+    background: #282a36;
+}
+
+QScrollBar::handle {
+    background: #6272a4;
+}
+
+QScrollBar::add-line {
+    background: #6272a4;
+}
+
+QScrollBar::sub-line {
+    background: #6272a4;
+}
+
+.locationbar {
+    border-bottom: 1px solid #282a36;
+}
+
+.quicksearch-item {
+    padding-top: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-top: 1px solid #44475a;
+    border-bottom: 0px solid #44475a;
+}
+
+.quicksearch-item-title {
+    color: #8be9fd;
+}
+
+.quicksearch-item-title-highlight {
+    color: #f8f8f2;
+}
+
+.quicksearch-item-hint {
+    color: #f8f8f2;
+}
+
+.quicksearch-item-description {
+    color: #6272a4;
+}
