@@ -8,30 +8,30 @@ QTableView, QMessageBox, QDialog, QListView {
     alternate-background-color: white;
 }
 
-QHeaderView, QHeaderView-section {
+QHeaderView, QHeaderView::section {
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f6f8fa, stop: 1 #f6f8fa);
 }
 
-QHeaderView-section {
+QHeaderView::section {
     color: black;
     border-left-color: #f6f8fa;
     border-right-color: #f6f8fa;
 }
 
-QTableView-item {
+QTableView::item {
     color: black;
 }
 
-QTableView-item:first {
+QTableView::item:has-children {
     color: black;
 }
 
-QTableView-item:selected {
+QTableView::item:selected {
     color: black;
     background-color: #f6f8fa;
 }
 
-QTableView-item:focus {
+QTableView::item:focus {
     background-color: #f6f8fa;
 }
 
@@ -47,21 +47,21 @@ QLineEdit {
     border-top-color: #f6f8fa;
 }
 
-.quicksearch {
+Quicksearch {
     background-color: white;
     color: black;
 }
 
-.quicksearch-query {
+Quicksearch #query-container {
     border: 1px solid #f6f8fa;
     border-bottom-color: #f6f8fa;
 }
 
-.quicksearch-query-div {
+Quicksearch #query-container > Div {
     border: 1px solid #f6f8fa;
 }
 
-.quicksearch-edit {
+Quicksearch QLineEdit {
     color: black;
     background-color: white;
     border: 1px solid #f6f8fa;
@@ -70,11 +70,12 @@ QLineEdit {
     border-right-color: #f6f8fa;
 }
 
-.quicksearch-view {
+Quicksearch QListView {
     background-color: white;
     color: black;
 }
-.quicksearch-view-item:selected {
+
+Quicksearch QListView::item:selected {
     background-color: #f6f8fa;
     color: black;
 }
@@ -92,52 +93,53 @@ QStatusBar, QStatusBar QLabel {
     color: black;
 }
 
-.splashscreen {
+SplashScreen {
     background-color: white;
     color: black;
 }
 
-.splashscreen-button {
+SplashScreen QPushButton {
     background-color: white;
 }
 
-.overlay {
+Overlay {
     background-color: white;
     color: black;
     border: 1px solid #f6f8fa;
 }
 
-.overlay-button {
+Overlay QPushButton {
     color: black;
     background-color: white;
 }
 
-.filterbar {
+FilterBar {
     background-color: white;
     border: 1px solid #f6f8fa;
 }
 
-QRadioButton-checked {
+QRadioButton::checked {
     color: black;
 }
+
 
 * {
     background: #f6f8fa;
     color: black;
 }
 
-.locationbar {
+LocationBar:read-only {
     border-bottom: 1px solid #f6f8fa;
     background-color: white;
     color: black;
 }
 
-.statusbar {
+QStatusBar, QStatusBar QLabel {
     background: white;
     color: black;
 }
 
-.quicksearch-item {
+Quicksearch QListView::item {
     padding-top: 1px;
     padding-left: 4px;
     padding-right: 4px;

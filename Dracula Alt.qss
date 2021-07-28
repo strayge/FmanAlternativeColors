@@ -4,33 +4,33 @@ Based on theme by sf-pear - https://github.com/sf-pear/dracula-for-fman
 
 QTableView, QMessageBox, QDialog, QListView {
     background-color: #282a36;
-    alternate-background-color: #282a36;
+    alternate-background-color: #302c40;
 }
 
-QHeaderView, QHeaderView-section {
+QHeaderView, QHeaderView::section {
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #282a36, stop: 1 #282a36);
 }
 
-QHeaderView-section {
+QHeaderView::section {
     color: #bd93f9;
     border-left-color: #44475a;
     border-right-color: #44475a;
 }
 
-QTableView-item {
+QTableView::item {
     color: #50fa7b;
 }
 
-QTableView-item:first {
+QTableView::item:has-children {
     color: #f8f8f2;
 }
 
-QTableView-item:selected {
+QTableView::item:selected {
     color: #bd93f9;
     background-color: #282a36;
 }
 
-QTableView-item:focus {
+QTableView::item:focus {
     background-color: #44475a;
 }
 
@@ -46,21 +46,21 @@ QLineEdit {
     border-top-color: #44475a;
 }
 
-.quicksearch {
+Quicksearch {
     background-color: #282a36;
     color: #f8f8f2;
 }
 
-.quicksearch-query {
+Quicksearch #query-container {
     border: 1px solid #282a36;
     border-bottom-color: #282a36;
 }
 
-.quicksearch-query-div {
+Quicksearch #query-container > Div {
     border: 1px solid #282a36;
 }
 
-.quicksearch-edit {
+Quicksearch QLineEdit {
     color: #f8f8f2;
     background-color: #44475a;
     border: 1px solid #6272a4;
@@ -69,11 +69,11 @@ QLineEdit {
     border-right-color: #6272a4;
 }
 
-.quicksearch-view {
+Quicksearch QListView {
     background-color: #282a36;
 }
 
-.quicksearch-view-item:selected {
+Quicksearch QListView::item:selected {
     background-color: #44475a;
 }
 
@@ -90,29 +90,29 @@ QStatusBar, QStatusBar QLabel {
     color: #8be9fd;
 }
 
-.splashscreen-button {
+SplashScreen QPushButton {
     color: #282a36;
     background-color: #bd93f9;
     border: 1px solid #bd93f9;
 }
 
-.overlay {
+Overlay {
     background-color: #282a36;
     border: 1px solid #6272a4;
 }
 
-.filterbar {
+FilterBar {
     background-color: #282a36;
     border: 1px solid #6272a4;
 }
 
-.nonexistentshortcutdialog-button {
+NonexistentShortcutDialog QRadioButton {
     color: #282a36;
     background-color: #bd93f9;
     border: 1px solid #bd93f9;
 }
 
-.nonexistentshortcutdialog-edit {
+NonexistentShortcutDialog QLineEdit {
     border: 3px solid #44475a;
 }
 
@@ -143,11 +143,12 @@ QScrollBar::sub-line {
     background: #6272a4;
 }
 
-.locationbar {
+
+LocationBar:read-only {
     border-bottom: 1px solid #282a36;
 }
 
-.quicksearch-item {
+Quicksearch QListView::item {
     padding-top: 3px;
     padding-left: 4px;
     padding-right: 4px;

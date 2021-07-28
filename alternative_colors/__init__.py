@@ -2,6 +2,8 @@ from fman import ApplicationCommand, DirectoryPaneListener, _get_app_ctxt
 from fman import save_json, load_json
 from pathlib import Path
 from glob import glob
+from tinycss.parsing import ParseError
+from fman.impl.util.css import parse_css
 
 
 delayed_init_started = False
@@ -10,26 +12,56 @@ settings_file = 'alternative_colors.json'
 current_theme = None
 
 
+def load_qss(qss_filename):
+    theme = _get_app_ctxt().theme
+
+    # set qss rules without processing
+    with open(qss_filename, 'rt') as f:
+        f_contents = f.read()
+    theme._extra_qss_from_css[qss_filename] = f_contents
+    
+    # set quicksearch rules into theme._quicksearch_item_css
+    try:
+        new_rules = parse_css(f_contents.encode())
+        # only quicksearch rules uses class style, so filter them
+        theme._css_rules[qss_filename] = [
+            rule for rule in new_rules if rule.selectors[0].startswith('.')
+        ]
+        theme._quicksearch_item_css = theme._get_quicksearch_item_css()
+    except (ValueError, ParseError) as e:
+        print(repr(e))
+        error_message = 'CSS error in %s: %s' % (qss_filename, e)
+        raise ThemeError(error_message) from None
+
+    # apply
+    theme._update_app()
+
+
+def unload_qss(qss_filename):
+    theme = _get_app_ctxt().theme
+    del theme._extra_qss_from_css[qss_filename]
+    theme._quicksearch_item_css = theme._get_quicksearch_item_css()
+    theme._update_app()
+
+
 def activate_theme(name, save=True):
     global current_theme
-    context = _get_app_ctxt()
-    theme = context.theme
+    theme = _get_app_ctxt().theme
     theme._updates_enabled = False
-    if current_theme:
-        # undo previous theme
-        old_filename = Path(plugin_path) / '{}.css'.format(current_theme)
-        theme.unload(old_filename)
-    filename = Path(plugin_path) / '{}.css'.format(name)
+    if current_theme:  # undo previous theme
+        old_filename = Path(plugin_path) / '{}.qss'.format(current_theme)
+        unload_qss(old_filename)
+    filename = Path(plugin_path) / '{}.qss'.format(name)
     current_theme = name
-    theme.load(filename)
+    load_qss(filename)
     theme.enable_updates()
     if save:
         save_json(settings_file, {'name': name})
 
 
 # add commands to change themes
-for i, filename in enumerate(Path(plugin_path).glob('*.css'), start=1):
-    class_name = 'Theme{}'.format(i)
+for i, filename in enumerate(Path(plugin_path).glob('*.qss'), start=1):
+    class_name = 'AlternativeColorTheme{}'.format(i)
     globals()[class_name] = type(
         class_name,
         (ApplicationCommand,),
@@ -40,60 +72,11 @@ for i, filename in enumerate(Path(plugin_path).glob('*.css'), start=1):
         },
     )
 
-def extend_css_to_qss():
-    theme = _get_app_ctxt().theme
-    theme._CSS_TO_QSS.update({
-        'QTableView': 'QTableView',
-        'QMessageBox': 'QMessageBox',
-        'QDialog': 'QDialog',
-        'QListView': 'QListView',
-        'QHeaderView': 'QHeaderView',
-        'QHeaderView-section': 'QHeaderView::section',
-        'QTableView-section':  'QHeaderView::section',
-        'QTableView-item':  'QTableView::item',
-        'QTableView-item:first': 'QTableView::item:has-children',
-        'QTableView-item:last': 'QTableView::item:open',
-        'QTableView-item:selected': 'QTableView::item:selected',
-        'QTableView-item:focus': 'QTableView::item:focus',
-        'QLabel': 'QLabel',
-        'QRadioButton': 'QRadioButton',
-        'QRadioButton-checked': 'QRadioButton::checked',
-        'QCheckBox': 'QCheckBox',
-        'QLineEdit': 'QLineEdit',
-        'QLineEdit:read-only': 'QLineEdit:read-only',
-        'QStatusBar': 'QStatusBar',
-        'QStatusBar-label': 'QStatusBar QLabel',
-        'QScrollBar': 'QScrollBar',
-        'QScrollBar::handle': 'QScrollBar::handle',
-        'QScrollBar::add-line': 'QScrollBar::add-line',
-        'QScrollBar::sub-line': 'QScrollBar::sub-line',
-        'QInputDialog': 'QInputDialog',
-        'QInputDialog-edit': 'QInputDialog QLineEdit',
-        'QPushButton': 'QPushButton',
-        'QMenu': 'QMenu',
-        'QMenu-item': 'QMenu::item',
-        'QMenu-item:selected': 'QMenu::item:selected',
-        'QMenu-separator': 'QMenu::separator',
-        '.prompt-edit': 'Prompt QLineEdit',
-        '.quicksearch': 'Quicksearch',
-        '.quicksearch-query': 'Quicksearch #query-container',
-        '.quicksearch-query-div': 'Quicksearch #query-container > Div',
-        '.quicksearch-edit': 'Quicksearch QLineEdit',
-        '.quicksearch-view': 'Quicksearch QListView',
-        '.quicksearch-view:selected': 'Quicksearch QListView::item:selected',
-        '.quicksearch-items': 'Quicksearch #items-container',
-        '.splashscreen-button': 'SplashScreen QPushButton',
-        '.overlay': 'Overlay',
-        '.filterbar': 'FilterBar',
-        '.filterbar-edit': 'FilterBar QLineEdit',
-        '.nonexistentshortcutdialog-button': 'NonexistentShortcutDialog QPushButton',
-        '.nonexistentshortcutdialog-edit': 'NonexistentShortcutDialog QLineEdit',
-    })
-
 
 def load_theme_on_startup():
     theme_name = load_json(settings_file, default={'name': 'Default'}).get('name')
     activate_theme(theme_name, save=False)
+
 
 def delayed_init():
     """Activate scheme on startup.
@@ -106,7 +89,6 @@ def delayed_init():
         return
     delayed_init_started = True
 
-    extend_css_to_qss()
     load_theme_on_startup()
 
 

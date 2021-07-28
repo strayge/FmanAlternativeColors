@@ -8,30 +8,30 @@ QTableView, QMessageBox, QDialog, QListView {
     alternate-background-color: #2E3440;
 }
 
-QHeaderView, QHeaderView-section {
+QHeaderView, QHeaderView::section {
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2E3440, stop: 1 #2E3440);
 }
 
-QHeaderView-section {
+QHeaderView::section {
     color: #EBCB8B;
     border-left-color: #434C5E;
     border-right-color: #434C5E;
 }
 
-QTableView-item {
+QTableView::item {
     color: #8FBCBB;
 }
 
-QTableView-item:first {
+QTableView::item:has-children {
     color: #D8DEE9;
 }
 
-QTableView-item:selected {
+QTableView::item:selected {
     color: #BF616A;
     background-color: #2E3440;
 }
 
-QTableView-item:focus {
+QTableView::item:focus {
     background-color: #4C566A;
 }
 
@@ -47,21 +47,21 @@ QLineEdit {
     border-top-color: #434C5E;
 }
 
-.quicksearch {
+Quicksearch {
     background-color: #2E3440;
     color: #D8DEE9;
 }
 
-.quicksearch-query {
+Quicksearch #query-container {
     border: 1px solid #2E3440;
     border-bottom-color: #2E3440;
 }
 
-.quicksearch-query-div {
+Quicksearch #query-container > Div {
     border: 1px solid #2E3440;
 }
 
-.quicksearch-edit {
+Quicksearch QLineEdit {
     color: #D8DEE9;
     background-color: #434C5E;
     border: 1px solid #434C5E;
@@ -70,11 +70,11 @@ QLineEdit {
     border-right-color: #434C5E;
 }
 
-.quicksearch-view {
+Quicksearch QListView {
     background-color: #2E3440;
 }
 
-.quicksearch-view:selected {
+Quicksearch QListView::item:selected {
     background-color: #434C5E;
 }
 
@@ -91,30 +91,30 @@ QStatusBar, QStatusBar QLabel {
     color: #88C0D0;
 }
 
-.splashscreen-button {
+SplashScreen QPushButton {
     color: #2E3440;
     background-color: #EBCB8B;
     border: 1px solid #EBCB8B;
 }
 
-.overlay {
+Overlay {
     background-color: #2E3440;
     border: 1px solid #434C5E;
 }
 
-.filterbar {
+FilterBar {
     background-color: #2E3440;
     border: 1px solid #434C5E;
 }
 
-.nonexistentshortcutdialog-button {
+NonexistentShortcutDialog QRadioButton {
     max-width: 4em;
     color: #2E3440;
     background-color: #EBCB8B;
     border: 1px solid #EBCB8B;
 }
 
-.nonexistentshortcutdialog-edit {
+NonexistentShortcutDialog QLineEdit {
     border: 3px solid #434C5E;
 }
 
@@ -151,15 +151,16 @@ QScrollBar::sub-line {
     subcontrol-origin: margin;
 }
 
+
 * {
     background: #434C5E;
 }
 
-.locationbar {
+LocationBar:read-only {
     border-bottom: 1px solid #2E3440;
 }
 
-.quicksearch-item {
+Quicksearch QListView::item {
     padding-top: 3px;
     border-top: 1px solid #434C5E;
     border-bottom: 0px solid #434C5E;

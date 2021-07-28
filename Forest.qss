@@ -7,24 +7,24 @@ QTableView, QMessageBox, QDialog, QListView {
     alternate-background-color: #1f1f1f;
 }
 
-QTableView-item {
+QTableView::item {
     color: #395f3c;
 }
 
-QTableView-item:first {
+QTableView::item:has-children {
     color: #d4d7d6; /* label color */
 }
 
-QTableView-item:selected {
+QTableView::item:selected {
     color: #bde091;
     background-color: #2e2e2e; /* selected back color */
 }
 
-QTableView-item:focus {
+QTableView::item:focus {
     background-color: #363636;
 }
 
-.quicksearch {
+Quicksearch {
     background-color: #2f4f32;
 }
 
@@ -33,7 +33,7 @@ QStatusBar {
     border-top: 1px solid #4e684e;
 }
 
-.quicksearch-item {
+Quicksearch QListView::item {
     padding-top: 0px;
 }
 

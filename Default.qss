@@ -1,0 +1,129 @@
+QTableView, QMessageBox, QDialog, QListView {
+    background-color: #272822;
+    alternate-background-color: #272822;
+}
+
+QHeaderView, QHeaderView::section {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #363731, stop: 1 #272822);
+}
+
+QHeaderView::section {
+    color: #8f908a;
+    border-style: solid;
+    border-left-color: #272822;
+    border-right-color: #363731;
+}
+
+QTableView::item {
+    color: #75715e;
+}
+
+QTableView::item:has-children {
+    color: white;
+    background: transparent;
+}
+
+QTableView::item:selected {
+    color: #f92672;
+    background-color: #272822;
+}
+
+QTableView::item:focus {
+    background-color: #49483e;
+}
+
+QLabel, QRadioButton, QCheckBox {
+    color: #8f908a;
+}
+
+QLineEdit {
+    color: white;
+    background-color: #303030;
+    border: 1px solid #363731;
+    border-left-color: #272822;
+    border-top-color: #272822;
+}
+
+Quicksearch {
+    background-color: #404040;
+    color: #00000000;
+}
+
+Quicksearch #query-container {
+    border: 1px solid #404040;
+    border-bottom-color: #8e8e8e;
+}
+
+Quicksearch #query-container > Div {
+    border: 1px solid #2c2c2c;
+}
+
+Quicksearch QLineEdit {
+    color: #1d1d1d;
+    background-color: #e6e6e6;
+    border: 1px solid #dddddd;
+    border-top-color: #aeaeae;
+    border-left-color: #c9c9c9;
+    border-right-color: #d0d0d0;
+}
+
+Quicksearch QListView {
+    background-color: #404040;
+}
+
+Quicksearch QListView::item:selected {
+    background-color: #575757;
+}
+
+QLineEdit:read-only {
+    color: #9a9a9a;
+}
+
+QStatusBar {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #5b5b5b, stop: 1 #545454);
+    border-top: 1px solid #7d7d7d;
+}
+
+QStatusBar, QStatusBar QLabel {
+    color: white;
+}
+
+Overlay {
+    background-color: #272822;
+    border: 1px solid #7d7d7d;
+}
+
+FilterBar {
+    background-color: #272822;
+    border: 1px solid #7d7d7d;
+}
+
+QRadioButton::checked {
+    color: white;
+}
+
+
+LocationBar:read-only {
+    border-bottom: 1px solid #262626;
+}
+
+Quicksearch QListView::item {
+    border-top: 1px solid #4d4d4d;
+    border-bottom: 1px solid #363636;
+}
+
+.quicksearch-item-title {
+    color: #c8c8c8;
+}
+
+.quicksearch-item-title-highlight {
+    color: white;
+}
+
+.quicksearch-item-hint {
+    color: white;
+}
+
+.quicksearch-item-description {
+    color: #8f908a;
+}
