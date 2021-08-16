@@ -21,3 +21,7 @@ Install with [fman's built-in command for installing plugins](https://fman.io/do
 Some predefines themes in addon folder (you can suggest new ones via PR).
 
 Use command palette to switch themes: `Activate theme ...`
+
+### Preview
+
+![image](https://user-images.githubusercontent.com/2664578/129623847-eb942422-9230-4f3e-83b6-38c3c0842347.png)
