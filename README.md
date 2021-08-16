@@ -2,7 +2,11 @@
 
 Plugin for [fman.io](https://fman.io) to switch themes.
 
-Themes can set alternative background for even rows (`alternate-background-color` css property).
+Themes can set alternative background for even rows. Example:  
+
+```css
+QTableView {alternate-background-color: #293024;}
+```
 
 Theme now pure QSS, which allow any customisations without changing plugin code.  
 CSS syntax with restricted properties remains only for `quicksearch` styles as they hardcoded at fman.
