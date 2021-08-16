@@ -1,5 +1,5 @@
-from fman import ApplicationCommand, DirectoryPaneListener, _get_app_ctxt
 from fman import save_json, load_json
+from fman import ApplicationCommand, DirectoryPaneListener, _get_app_ctxt, DATA_DIRECTORY
 from pathlib import Path
 from glob import glob
 from tinycss.parsing import ParseError
@@ -8,6 +8,7 @@ from fman.impl.util.css import parse_css
 
 delayed_init_started = False
 plugin_path = Path(__file__).parent.parent
+settings_path = Path(DATA_DIRECTORY) / 'Plugins' / 'User' / 'Settings'
 settings_file = 'alternative_colors.json'
 current_theme = None
 
@@ -44,30 +45,41 @@ def unload_qss(qss_filename):
     theme._update_app()
 
 
+def get_theme_filename(name):
+    filename = Path(settings_path) / '{}.qss'.format(current_theme)
+    if filename.exists():
+        return filename
+    return Path(plugin_path) / '{}.qss'.format(current_theme)
+
+
 def activate_theme(name, save=True):
     global current_theme
     theme = _get_app_ctxt().theme
     theme._updates_enabled = False
     if current_theme:  # undo previous theme
-        old_filename = Path(plugin_path) / '{}.qss'.format(current_theme)
-        unload_qss(old_filename)
-    filename = Path(plugin_path) / '{}.qss'.format(name)
+        unload_qss(get_theme_filename(current_theme))
     current_theme = name
-    load_qss(filename)
+    load_qss(get_theme_filename(name))
     theme.enable_updates()
     if save:
         save_json(settings_file, {'name': name})
 
 
-# add commands to change themes
-for i, filename in enumerate(Path(plugin_path).glob('*.qss'), start=1):
+# add commands to change themes (user themes override plugin defaults)
+themes = {}
+for filename in Path(plugin_path).glob('*.qss'):
+    themes[filename.stem] = filename
+for filename in Path(settings_path).glob('*.qss'):
+    themes[filename.stem] = filename
+for i, name in enumerate(themes.keys(), start=1):
+    filename = themes[name]
     class_name = 'AlternativeColorTheme{}'.format(i)
     globals()[class_name] = type(
         class_name,
         (ApplicationCommand,),
         {
-            'name': filename.stem,
-            'aliases': ('Activate theme "{}"'.format(filename.stem),),
+            'name': name,
+            'aliases': ('Activate theme "{}"'.format(name),),
             '__call__': lambda self: activate_theme(self.name),
         },
     )
