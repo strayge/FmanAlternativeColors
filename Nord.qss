@@ -3,7 +3,7 @@ Based on theme by ekillops
 https://github.com/fman-users/fman/issues/45#issuecomment-833181122
 */
 
-QTableView, QMessageBox, QDialog, QListView {
+QTableView, QMessageBox, QDialog, QListView, QLabel {
     background-color: #2E3440;
     alternate-background-color: #2E3440;
 }
