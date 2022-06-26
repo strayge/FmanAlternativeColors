@@ -1,0 +1,241 @@
+/* 
+Based on theme by jrkd
+https://github.com/fman-users/fman/issues/45#issuecomment-678849432
+*/
+
+* {
+	font-size: 12pt;
+    background: #cccccc;
+    color: black;
+}
+
+QTableView, QMessageBox, QDialog, QListView {
+    background-color: white;
+    alternate-background-color: #efefef;
+}
+
+QHeaderView, QHeaderView::section {
+	color: #ffffff;
+    background: #eeeeee;
+	border: none;
+	border-style: solid;
+	border-left-color: black;
+	border-right-color: black;
+	border-right-width: 1px;
+    border-bottom-color: #aaaaaa;
+	border-bottom-width: 1px;
+}
+
+QHeaderView, QHeaderView::item {
+    color: white;
+}
+
+/* borders above */
+QHeaderView::section {
+    color: black;
+}
+
+QTableView::item {
+    color: black;
+}
+
+QTableView::item:has-children {
+    color: black;
+}
+
+QTableView::item:selected {
+    color: black;
+    background-color: #aaaaaa;
+}
+
+QTableView::item:selected:focus {
+    color: white;
+    background-color: #000000;
+    border: 1px solid #ffffff;
+}
+
+QTableView::item:focus {
+    background-color: black;
+	color: white;
+}
+
+QTableView #editor {
+	/*
+	 * The Qt "editor" when renaming a file. It's a QLineEdit, which has a
+	 * border (see below). On Windows, this border shifts the file name down so
+	 * much that underscores "_" are obscured. Prevent this:
+	 */
+	border-top: none;
+	border-bottom: none;
+}
+
+QLabel, QRadioButton, QCheckBox {
+    color: black;
+    background: white;
+}
+
+QLineEdit {
+    color: black;
+    background-color: #bbbbbb;
+    border-left: 8px solid #bbbbbb;
+    border-right: none;
+    border-top: none;
+	border-bottom: none;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+Quicksearch {
+    border: 3px solid black;
+    background-color: #888888;
+    color: black;
+}
+
+Quicksearch #query-container {
+    border: 1px solid #000000;
+    border-bottom: 3px solid #000000;
+}
+
+Quicksearch QLineEdit {
+    color: black;
+    background-color: white;
+}
+
+Quicksearch #query-container > Div {
+    padding: 0;
+    border: none;
+}
+
+Quicksearch #items-container {
+	margin-bottom: 4px;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: none;
+    border-top: none;
+}
+
+Quicksearch QListView {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+Quicksearch QListView::item:selected {
+    background-color: #dddddd;
+    border: 1px solid #000000;
+    padding: 0px;
+}
+
+QLineEdit:read-only {
+    color: #cbcbcb;
+}
+
+QStatusBar {
+    background: #888888;
+    border-top: 1px solid black;
+}
+
+QStatusBar, QStatusBar QLabel {
+    color: #cbcbcb;
+}
+
+SplashScreen {
+    background-color: white;
+    color: black;
+}
+
+SplashScreen QPushButton {
+    background-color: white;
+    background: white;
+    border: 1px solid #bd93f9;
+}
+
+Overlay {
+    background-color: white;
+    color: black;
+    border: 1px solid #ffffff;
+}
+
+Overlay QPushButton {
+    color: black;
+    background-color: white;
+    background: white;
+}
+
+FilterBar {
+    background: #cccccc;
+    border: 1px solid black;
+}
+
+FilterBar QLineEdit {
+    border: 0px;
+    color: black;
+    background: white;
+    padding: 50px 5px;
+}
+
+QRadioButton::checked {
+    color: black;
+}
+
+
+LocationBar:read-only {
+    border: 0px;
+    border-bottom: 1px solid black;
+    background-color: white;
+    color: black;
+}
+
+QStatusBar, QStatusBar QLabel {
+    background: white;
+    color: black;
+    padding-bottom: 5px;
+}
+
+Quicksearch QListView::item {
+    padding-top: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+}
+
+th {
+	font-size: 10pt;
+}
+
+.locationbar {
+	padding: 0.25ex;
+	border-bottom: 1px solid black;
+}
+
+.statusbar {
+	font-size: 8pt;
+}
+
+.quicksearch-query, .quicksearch-item-title {
+	font-size: 12pt;
+}
+
+.quicksearch-item {
+	padding: 0px;
+	border-top: 0px solid white;
+	border-bottom: 0px solid white;
+}
+
+.quicksearch-item-title {
+	color: #888888;
+}
+
+.quicksearch-item-title-highlight {
+	color: black;
+}
+
+.quicksearch-item-hint {
+	font-size: 8pt;
+	color: black;
+}
+
+.quicksearch-item-description {
+	color: black;
+}
