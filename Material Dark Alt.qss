@@ -3,12 +3,11 @@ By: Ameer Jamal
 Based on theme by sf-pear - https://github.com/sf-pear/dracula-for-fman
 */
 
-
 QTableView, QMessageBox, QDialog, QListView {
     /* Main Background */
     background-color: #121212;
     /* Row Alternate Color */
-    alternate-background-color: #121212;
+    alternate-background-color: #212121;
 }
 
 /*Header like name size modified */
