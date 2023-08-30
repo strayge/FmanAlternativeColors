@@ -3,6 +3,7 @@ By: Ameer Jamal
 Based on theme by sf-pear - https://github.com/sf-pear/dracula-for-fman
 */
 
+
 QTableView, QMessageBox, QDialog, QListView {
     /* Main Background */
     background-color: #121212;
@@ -14,7 +15,6 @@ QTableView, QMessageBox, QDialog, QListView {
 QHeaderView, QHeaderView::section {
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #121212, stop: 1 #212121);
 }
-
  /* Name, Size , Modified title color */
 QHeaderView::section {
     color: #f27fa5;
@@ -59,8 +59,6 @@ QLineEdit {
     border-top-color: #212121;
 }
 
-
-
 QLineEdit:read-only {
     color: #8be9fd;
 }
@@ -87,7 +85,12 @@ Overlay {
 
 FilterBar {
     background-color: #282a36;
-    border: 1px solid #FF1744;
+    border: 1px solid #EA80FC;
+
+}
+FilterBar QLineEdit{
+    color:#cd950c;
+    font-size: 18pt;
 }
 
 NonexistentShortcutDialog QRadioButton {
@@ -105,7 +108,6 @@ QRadioButton::checked {
 }
 
 /* scrollbar preferences */
-
 QScrollBar {
     color: #f8f8f2;
     background-color: #121212;  
@@ -148,7 +150,7 @@ Quicksearch QListView::item {
 }
 
 .quicksearch-item-title-highlight {
-    color: #FFEB3B !important; 
+    color: #FFC107 !important; 
 }
 
 .quicksearch-item-hint {
@@ -171,7 +173,9 @@ Quicksearch #query-container > Div {
 }
 
 Quicksearch QLineEdit {
-    color: #f8f8f2;
+    color: #FFC107;
+    font-size: 18pt;
+    padding: 5px;
     background-color: #121212;
     border: 1px solid #EA80FC;
     border-top-color: #EA80FC;
