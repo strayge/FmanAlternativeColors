@@ -83,14 +83,16 @@ Overlay {
     border: 1px solid #6272a4;
 }
 
+/* When you type to filter files in any Directory */
 FilterBar {
     background-color: #282a36;
     border: 1px solid #EA80FC;
-
 }
+
 FilterBar QLineEdit{
     color:#cd950c;
-    font-size: 18pt;
+    /* font-size: 18pt; If you need a bigger filter bar enable
+    Removed Due to Windows Bug */
 }
 
 NonexistentShortcutDialog QRadioButton {
